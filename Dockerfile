@@ -7,4 +7,4 @@ MAINTAINER Noel Cower <ncower@gmail.com>
 # ca-certificates - Cloning via https
 # make            - Building
 # openssh-client  - Cloning via ssh, key injected over volume
-RUN ["apk", "add", "-U", "git", "openssl", "ca-certificates", "openssh-client", "make"]
+RUN apk add -U git openssl ca-certificates openssh-client make && rm -rf /var/cache/apk
