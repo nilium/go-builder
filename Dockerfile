@@ -1,4 +1,4 @@
-FROM golang:1.6.2-alpine
+FROM golang:1.6-alpine
 
 MAINTAINER Noel Cower <ncower@gmail.com>
 
@@ -7,4 +7,6 @@ MAINTAINER Noel Cower <ncower@gmail.com>
 # ca-certificates - Cloning via https
 # make            - Building
 # openssh-client  - Cloning via ssh, key injected over volume
-RUN apk add -U git openssl ca-certificates openssh-client make && rm -rf /var/cache/apk && rm -rf /var/log && mkdir /var/log
+RUN apk add -U git openssl ca-certificates openssh-client make
+
+ONBUILD RUN apk update && apk add -u git openssl openssh-client ca-certificates make
