@@ -7,6 +7,7 @@ MAINTAINER Noel Cower <ncower@gmail.com>
 # ca-certificates - Cloning via https
 # make            - Building
 # openssh-client  - Cloning via ssh, key injected over volume
-RUN apk add -U git openssl ca-certificates openssh-client make
+RUN echo 'deb http://httpredir.debian.org/debian wheezy-backports main' > /etc/apt/sources.list.d/wheezy-backports.list && \
+        apt-get update && apt-get install -y --no-install-recommends -t wheezy-backports libc6 git openssl ca-certificates openssh-client make
 
-ONBUILD RUN apk update && apk add -u git openssl openssh-client ca-certificates make
+ONBUILD RUN RUN apt-get update && apt-get install -y --no-install-recommends -t wheezy-backports libc6 git openssl ca-certificates openssh-client
