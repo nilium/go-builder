@@ -1,4 +1,4 @@
-FROM golang:1.7.2-wheezy
+FROM golang:1.7.3-wheezy
 
 MAINTAINER Noel Cower <ncower@gmail.com>
 
