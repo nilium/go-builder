@@ -1,4 +1,4 @@
-FROM golang:1.7.3
+FROM golang:1.8beta1
 
 MAINTAINER Noel Cower <ncower@gmail.com>
 
