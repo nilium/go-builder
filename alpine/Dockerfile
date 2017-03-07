@@ -2,6 +2,8 @@ FROM golang:1.8.0-alpine
 
 MAINTAINER Noel Cower <ncower@gmail.com>
 
+COPY ["nsswitch.conf", "/etc/nsswitch.conf"]
+
 # git             - For cloning packages
 # openssl         - Cloning via https
 # ca-certificates - Cloning via https
