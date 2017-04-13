@@ -15,7 +15,7 @@ COPY ["alpine/nsswitch.conf", "/etc/nsswitch.conf"]
 # jq              - Parsing JSON
 # m4              - Templating
 # gzip            - Compression tools
-RUN apk add -U git openssl ca-certificates openssh-client make bash curl wget tar jq m4 gzip
+RUN apk --no-cache add git openssl ca-certificates openssh-client make bash curl wget tar jq m4 gzip
 
 # Upgrade dependencies in derived images
-ONBUILD RUN apk update && apk add -u git openssl ca-certificates openssh-client make bash curl wget tar jq m4 gzip
+ONBUILD RUN apk --no-cache add -u git openssl ca-certificates openssh-client make bash curl wget tar jq m4 gzip
