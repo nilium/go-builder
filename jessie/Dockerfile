@@ -8,6 +8,6 @@ MAINTAINER Noel Cower <ncower@gmail.com>
 # make            - Building
 # openssh-client  - Cloning via ssh, key injected over volume
 RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list && \
-        apt-get update && apt-get install -y --no-install-recommends -t jessie-backports libc6 git openssl ca-certificates openssh-client make
+        apt-get update && apt-get install -y --no-install-recommends -t jessie-backports libc6 git openssl ca-certificates openssh-client jq m4
 
-ONBUILD RUN RUN apt-get update && apt-get install -y --no-install-recommends -t jessie-backports libc6 git openssl ca-certificates openssh-client
+ONBUILD RUN RUN apt-get update && apt-get install -y --no-install-recommends -t jessie-backports libc6 git openssl ca-certificates openssh-client jq m4

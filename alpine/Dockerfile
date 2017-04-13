@@ -9,6 +9,13 @@ COPY ["nsswitch.conf", "/etc/nsswitch.conf"]
 # ca-certificates - Cloning via https
 # make            - Building
 # openssh-client  - Cloning via ssh, key injected over volume
-RUN apk add -U git openssl ca-certificates openssh-client make
+# bash            - Shell dependency
+# curl / wget     - HTTP requests
+# tar             - GNU tar
+# jq              - Parsing JSON
+# m4              - Templating
+# gzip            - Compression tools
+RUN apk add -U git openssl ca-certificates openssh-client make bash curl wget tar jq m4 gzip
 
-ONBUILD RUN apk update && apk add -u git openssl openssh-client ca-certificates make
+# Upgrade dependencies in derived images
+ONBUILD RUN apk update && apk add -u git openssl ca-certificates openssh-client make bash curl wget tar jq m4 gzip
