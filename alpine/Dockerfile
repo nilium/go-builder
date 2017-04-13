@@ -1,4 +1,4 @@
-FROM golang:1.8.0-alpine
+FROM golang:1.8.1-alpine
 
 MAINTAINER Noel Cower <ncower@gmail.com>
 
